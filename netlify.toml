@@ -1,0 +1,20 @@
+[build]
+  publish = "public"
+  command = "echo no build step"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  external_node_modules = ["pg-native"]
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/attachments/*"
+  to = "/.netlify/functions/api/attachments/:splat"
+  status = 200
+  force = true

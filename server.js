@@ -18,16 +18,23 @@ const BACKUP_DIR = path.join(REPORT_DIR, "backups");
 const TEST_CASES = path.join(DATA_DIR, "test-cases.json");
 const RESULTS = path.join(DATA_DIR, "execution-results.json");
 
-for (const dir of [DATA_DIR, ATTACH_DIR, REPORT_DIR, BACKUP_DIR]) {
-  fs.mkdirSync(dir, { recursive: true });
-}
 const SEED_CASES = path.join(ROOT, "data", "test-cases.json");
-if (!fs.existsSync(TEST_CASES)) {
-  if (TEST_CASES !== SEED_CASES && fs.existsSync(SEED_CASES)) fs.copyFileSync(SEED_CASES, TEST_CASES);
-  else fs.writeFileSync(TEST_CASES, "[]\n");
+if (!process.env.DATABASE_URL) {
+  for (const dir of [DATA_DIR, ATTACH_DIR, REPORT_DIR, BACKUP_DIR]) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+  if (!fs.existsSync(TEST_CASES)) {
+    if (TEST_CASES !== SEED_CASES && fs.existsSync(SEED_CASES)) fs.copyFileSync(SEED_CASES, TEST_CASES);
+    else fs.writeFileSync(TEST_CASES, "[]\n");
+  }
+  if (!fs.existsSync(RESULTS)) fs.writeFileSync(RESULTS, "{}\n");
 }
-if (!fs.existsSync(RESULTS)) fs.writeFileSync(RESULTS, "{}\n");
 
+// On Netlify the function is mounted under this prefix; strip it so routes match.
+app.use((req, _, next) => {
+  req.url = req.url.replace(/^\/\.netlify\/functions\/api(?=\/|$)/, "") || "/";
+  next();
+});
 app.use(express.json({ limit: "2mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(ROOT, "public")));
@@ -36,7 +43,9 @@ app.use(express.static(path.join(ROOT, "public")));
 // With DATABASE_URL set (e.g. a free Neon/Supabase Postgres) everything is stored in the database.
 // Otherwise data lives in local files, as before.
 const DATABASE_URL = process.env.DATABASE_URL || "";
+const IS_SERVERLESS = !!process.env.AWS_LAMBDA_FUNCTION_NAME;
 let pool = null;
+let dbReady = null;
 const cache = new Map(); // DB mode: file basename -> parsed JSON (write-through cache)
 const clone = v => JSON.parse(JSON.stringify(v));
 
@@ -55,13 +64,15 @@ const upload = multer({
         destination: (_, __, cb) => cb(null, ATTACH_DIR),
         filename: (_, file, cb) => cb(null, stampName(file.originalname))
       }),
-  limits: { fileSize: 10 * 1024 * 1024 },
+  // Netlify Functions reject request bodies over ~6 MB.
+  limits: { fileSize: (IS_SERVERLESS ? 4.5 : 10) * 1024 * 1024 },
   fileFilter: imageFilter
 });
 
 if (DATABASE_URL) {
   app.get("/attachments/:name", async (req, res) => {
     try {
+      await syncFromDatabase();
       const r = await pool.query("SELECT mime, data FROM attachments WHERE name = $1", [req.params.name]);
       if (!r.rows.length) return res.status(404).end();
       res.setHeader("Content-Type", r.rows[0].mime);
@@ -78,7 +89,7 @@ if (DATABASE_URL) {
 async function initDatabase() {
   const { Pool } = require("pg");
   const local = /localhost|127\.0\.0\.1/.test(DATABASE_URL);
-  pool = new Pool({ connectionString: DATABASE_URL, ssl: local ? false : { rejectUnauthorized: false } });
+  pool = new Pool({ connectionString: DATABASE_URL, ssl: local ? false : { rejectUnauthorized: false }, max: IS_SERVERLESS ? 1 : 10 });
   await pool.query("CREATE TABLE IF NOT EXISTS kv (key TEXT PRIMARY KEY, value TEXT NOT NULL, updated_at TIMESTAMPTZ DEFAULT now())");
   await pool.query("CREATE TABLE IF NOT EXISTS attachments (name TEXT PRIMARY KEY, mime TEXT NOT NULL, data BYTEA NOT NULL)");
   for (const [file, seed] of [[TEST_CASES, readSeed()], [RESULTS, {}]]) {
@@ -93,7 +104,23 @@ async function initDatabase() {
 }
 
 function readSeed() {
+  try { return require("./data/test-cases.json"); } catch (e) { /* fall through */ }
   try { return JSON.parse(fs.readFileSync(SEED_CASES, "utf8")); } catch (e) { return []; }
+}
+
+// DB mode: make sure tables exist, and reload the data files from the database on every
+// API request so several server instances (e.g. serverless) never serve stale data.
+async function syncFromDatabase() {
+  if (!dbReady) dbReady = initDatabase().catch(e => { dbReady = null; throw e; });
+  await dbReady;
+  const r = await pool.query("SELECT key, value FROM kv WHERE key = ANY($1)", [["test-cases.json", "execution-results.json"]]);
+  for (const row of r.rows) cache.set(row.key, JSON.parse(row.value));
+}
+if (DATABASE_URL) {
+  app.use(["/api", "/attachments"], async (_, res, next) => {
+    try { await syncFromDatabase(); next(); }
+    catch (e) { res.status(500).json({ error: "Database unavailable.", detail: e.message }); }
+  });
 }
 
 function readJson(file, fallback) {
@@ -148,10 +175,26 @@ function getResults() {
 
 // ---------- Admin auth ----------
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin123";
-const adminTokens = new Set();
+// Stateless signed tokens ("<expiry>.<hmac>") so login survives restarts and multiple instances.
+// Changing ADMIN_PASSWORD (or ADMIN_SECRET) invalidates all existing tokens.
+const TOKEN_TTL_MS = 12 * 60 * 60 * 1000;
+const TOKEN_KEY = crypto.createHash("sha256").update(`${process.env.ADMIN_SECRET || ""}|${ADMIN_PASSWORD}`).digest();
+const signExpiry = exp => crypto.createHmac("sha256", TOKEN_KEY).update(String(exp)).digest("hex");
+
+function makeToken() {
+  const exp = Date.now() + TOKEN_TTL_MS;
+  return `${exp}.${signExpiry(exp)}`;
+}
+
+function isValidToken(token) {
+  const [exp, sig] = String(token || "").split(".");
+  if (!exp || !sig || !(Number(exp) > Date.now())) return false;
+  const a = Buffer.from(sig), b = Buffer.from(signExpiry(exp));
+  return a.length === b.length && crypto.timingSafeEqual(a, b);
+}
 
 function requireAdmin(req, res, next) {
-  if (adminTokens.has(req.get("x-admin-token"))) return next();
+  if (isValidToken(req.get("x-admin-token"))) return next();
   res.status(401).json({ error: "Admin login required." });
 }
 
@@ -161,17 +204,13 @@ app.post("/api/admin/login", (req, res) => {
   if (given.length !== expected.length || !crypto.timingSafeEqual(given, expected)) {
     return res.status(401).json({ error: "Incorrect admin password." });
   }
-  const token = crypto.randomBytes(24).toString("hex");
-  adminTokens.add(token);
-  res.json({ ok: true, token });
+  res.json({ ok: true, token: makeToken() });
 });
 
-app.post("/api/admin/logout", (req, res) => {
-  adminTokens.delete(req.get("x-admin-token"));
-  res.json({ ok: true });
-});
+// Tokens are stateless, so logout is handled by the browser discarding its token.
+app.post("/api/admin/logout", (_, res) => res.json({ ok: true }));
 
-app.get("/api/admin/status", (req, res) => res.json({ admin: adminTokens.has(req.get("x-admin-token")) }));
+app.get("/api/admin/status", (req, res) => res.json({ admin: isValidToken(req.get("x-admin-token")) }));
 
 // ---------- Test case CRUD ----------
 const DIFFICULTIES = ["Beginner", "Intermediate", "Advanced", "Expert"];
@@ -510,15 +549,20 @@ app.use((err, req, res, next) => {
 
 app.get("*", (_, res) => res.sendFile(path.join(ROOT, "public", "index.html")));
 
-(async () => {
-  if (DATABASE_URL) {
-    await initDatabase();
-    console.log("Using database storage.");
-  }
-  app.listen(PORT, () => {
-    console.log(`ZEA CRM Test Tracker running at http://localhost:${PORT}`);
+module.exports = app;
+
+// Run as a normal server unless loaded by a serverless wrapper (netlify/functions/api.js).
+if (require.main === module) {
+  (async () => {
+    if (DATABASE_URL) {
+      await syncFromDatabase();
+      console.log("Using database storage.");
+    }
+    app.listen(PORT, () => {
+      console.log(`ZEA CRM Test Tracker running at http://localhost:${PORT}`);
+    });
+  })().catch(e => {
+    console.error("Startup failed:", e.message);
+    process.exit(1);
   });
-})().catch(e => {
-  console.error("Startup failed:", e.message);
-  process.exit(1);
-});
+}

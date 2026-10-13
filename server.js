@@ -8,9 +8,11 @@ const ExcelJS = require("exceljs");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const ROOT = __dirname;
-const DATA_DIR = path.join(ROOT, "data");
-const ATTACH_DIR = path.join(ROOT, "attachments");
-const REPORT_DIR = path.join(ROOT, "reports");
+// Set STORAGE_DIR to a persistent disk (e.g. /var/data on Render) to keep data across restarts.
+const STORE = process.env.STORAGE_DIR ? path.resolve(process.env.STORAGE_DIR) : ROOT;
+const DATA_DIR = path.join(STORE, "data");
+const ATTACH_DIR = path.join(STORE, "attachments");
+const REPORT_DIR = path.join(STORE, "reports");
 const BACKUP_DIR = path.join(REPORT_DIR, "backups");
 
 const TEST_CASES = path.join(DATA_DIR, "test-cases.json");
@@ -19,12 +21,17 @@ const RESULTS = path.join(DATA_DIR, "execution-results.json");
 for (const dir of [DATA_DIR, ATTACH_DIR, REPORT_DIR, BACKUP_DIR]) {
   fs.mkdirSync(dir, { recursive: true });
 }
-if (!fs.existsSync(TEST_CASES)) fs.writeFileSync(TEST_CASES, "[]\n");
+const SEED_CASES = path.join(ROOT, "data", "test-cases.json");
+if (!fs.existsSync(TEST_CASES)) {
+  if (TEST_CASES !== SEED_CASES && fs.existsSync(SEED_CASES)) fs.copyFileSync(SEED_CASES, TEST_CASES);
+  else fs.writeFileSync(TEST_CASES, "[]\n");
+}
 if (!fs.existsSync(RESULTS)) fs.writeFileSync(RESULTS, "{}\n");
 
 app.use(express.json({ limit: "2mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(ROOT, "public")));
+app.use("/attachments", express.static(ATTACH_DIR));
 
 const upload = multer({
   storage: multer.diskStorage({

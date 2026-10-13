@@ -31,24 +31,73 @@ if (!fs.existsSync(RESULTS)) fs.writeFileSync(RESULTS, "{}\n");
 app.use(express.json({ limit: "2mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(ROOT, "public")));
-app.use("/attachments", express.static(ATTACH_DIR));
 
+// ---------- Storage ----------
+// With DATABASE_URL set (e.g. a free Neon/Supabase Postgres) everything is stored in the database.
+// Otherwise data lives in local files, as before.
+const DATABASE_URL = process.env.DATABASE_URL || "";
+let pool = null;
+const cache = new Map(); // DB mode: file basename -> parsed JSON (write-through cache)
+const clone = v => JSON.parse(JSON.stringify(v));
+
+function stampName(originalName) {
+  const safe = path.basename(originalName).replace(/[^a-zA-Z0-9._-]/g, "_");
+  return `${new Date().toISOString().replace(/[:.]/g, "-")}_${safe}`;
+}
+
+const imageFilter = (_, file, cb) => {
+  if (/^image\/(png|jpeg|jpg|gif|webp)$/.test(file.mimetype)) cb(null, true); else cb(new Error("Only image files are allowed."));
+};
 const upload = multer({
-  storage: multer.diskStorage({
-    destination: (_, __, cb) => cb(null, ATTACH_DIR),
-    filename: (_, file, cb) => {
-      const safe = path.basename(file.originalname).replace(/[^a-zA-Z0-9._-]/g, "_");
-      const stamp = new Date().toISOString().replace(/[:.]/g, "-");
-      cb(null, `${stamp}_${safe}`);
-    }
-  }),
+  storage: DATABASE_URL
+    ? multer.memoryStorage()
+    : multer.diskStorage({
+        destination: (_, __, cb) => cb(null, ATTACH_DIR),
+        filename: (_, file, cb) => cb(null, stampName(file.originalname))
+      }),
   limits: { fileSize: 10 * 1024 * 1024 },
-  fileFilter: (_, file, cb) => {
-    if (/^image\/(png|jpeg|jpg|gif|webp)$/.test(file.mimetype)) cb(null, true); else cb(new Error("Only image files are allowed."));
-  }
+  fileFilter: imageFilter
 });
 
+if (DATABASE_URL) {
+  app.get("/attachments/:name", async (req, res) => {
+    try {
+      const r = await pool.query("SELECT mime, data FROM attachments WHERE name = $1", [req.params.name]);
+      if (!r.rows.length) return res.status(404).end();
+      res.setHeader("Content-Type", r.rows[0].mime);
+      res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+      res.send(r.rows[0].data);
+    } catch (e) {
+      res.status(500).end();
+    }
+  });
+} else {
+  app.use("/attachments", express.static(ATTACH_DIR));
+}
+
+async function initDatabase() {
+  const { Pool } = require("pg");
+  const local = /localhost|127\.0\.0\.1/.test(DATABASE_URL);
+  pool = new Pool({ connectionString: DATABASE_URL, ssl: local ? false : { rejectUnauthorized: false } });
+  await pool.query("CREATE TABLE IF NOT EXISTS kv (key TEXT PRIMARY KEY, value TEXT NOT NULL, updated_at TIMESTAMPTZ DEFAULT now())");
+  await pool.query("CREATE TABLE IF NOT EXISTS attachments (name TEXT PRIMARY KEY, mime TEXT NOT NULL, data BYTEA NOT NULL)");
+  for (const [file, seed] of [[TEST_CASES, readSeed()], [RESULTS, {}]]) {
+    const key = path.basename(file);
+    const r = await pool.query("SELECT value FROM kv WHERE key = $1", [key]);
+    if (r.rows.length) cache.set(key, JSON.parse(r.rows[0].value));
+    else {
+      await pool.query("INSERT INTO kv (key, value) VALUES ($1, $2)", [key, JSON.stringify(seed)]);
+      cache.set(key, seed);
+    }
+  }
+}
+
+function readSeed() {
+  try { return JSON.parse(fs.readFileSync(SEED_CASES, "utf8")); } catch (e) { return []; }
+}
+
 function readJson(file, fallback) {
+  if (pool) return cache.has(path.basename(file)) ? clone(cache.get(path.basename(file))) : fallback;
   try {
     return JSON.parse(fs.readFileSync(file, "utf8"));
   } catch (e) {
@@ -58,12 +107,35 @@ function readJson(file, fallback) {
 
 let writeQueue = Promise.resolve();
 function atomicWriteJson(file, data) {
-  writeQueue = writeQueue.then(async () => {
+  const run = async () => {
+    if (pool) {
+      const key = path.basename(file);
+      await pool.query(
+        "INSERT INTO kv (key, value) VALUES ($1, $2) ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value, updated_at = now()",
+        [key, JSON.stringify(data)]
+      );
+      cache.set(key, clone(data));
+      return;
+    }
     const tmp = `${file}.tmp`;
     await fs.promises.writeFile(tmp, JSON.stringify(data, null, 2) + "\n", "utf8");
     await fs.promises.rename(tmp, file);
-  });
-  return writeQueue;
+  };
+  const result = writeQueue.then(run);
+  writeQueue = result.catch(() => {}); // a failed write must not block later writes
+  return result;
+}
+
+// Copies the current contents of a data file into a backup; returns where it went.
+async function snapshotFile(file, backupName) {
+  if (pool) {
+    const key = `backup/${backupName}`;
+    await pool.query("INSERT INTO kv (key, value) VALUES ($1, $2) ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value", [key, JSON.stringify(readJson(file, null))]);
+    return `database:${key}`;
+  }
+  const target = path.join(BACKUP_DIR, backupName);
+  await fs.promises.copyFile(file, target);
+  return path.relative(ROOT, target);
 }
 
 function validStatus(s) {
@@ -146,9 +218,7 @@ function nextId(cases, extraIds = []) {
 
 async function backupTestCases(label) {
   const stamp = new Date().toISOString().replace(/[:.]/g, "-");
-  const target = path.join(BACKUP_DIR, `test-cases-${label}_${stamp}.json`);
-  await fs.promises.copyFile(TEST_CASES, target);
-  return path.relative(ROOT, target);
+  return snapshotFile(TEST_CASES, `test-cases-${label}_${stamp}.json`);
 }
 
 app.get("/api/health", (_, res) => res.json({ ok: true, time: new Date().toISOString() }));
@@ -358,10 +428,9 @@ app.delete("/api/results/:testId", async (req, res) => {
 app.post("/api/reset-results", async (_, res) => {
   try {
     const stamp = new Date().toISOString().replace(/[:.]/g, "-");
-    const backup = path.join(BACKUP_DIR, `execution-results-before-reset_${stamp}.json`);
-    await fs.promises.copyFile(RESULTS, backup);
+    const backup = await snapshotFile(RESULTS, `execution-results-before-reset_${stamp}.json`);
     await atomicWriteJson(RESULTS, {});
-    res.json({ ok: true, backup: path.relative(ROOT, backup) });
+    res.json({ ok: true, backup });
   } catch (e) {
     res.status(500).json({ error: "Could not reset results.", detail: e.message });
   }
@@ -370,21 +439,29 @@ app.post("/api/reset-results", async (_, res) => {
 app.post("/api/backup", async (_, res) => {
   try {
     const stamp = new Date().toISOString().replace(/[:.]/g, "-");
-    const target = path.join(BACKUP_DIR, `execution-results_${stamp}.json`);
-    await fs.promises.copyFile(RESULTS, target);
-    res.json({ ok: true, file: path.relative(ROOT, target) });
+    const file = await snapshotFile(RESULTS, `execution-results_${stamp}.json`);
+    res.json({ ok: true, file });
   } catch (e) {
     res.status(500).json({ error: "Backup failed.", detail: e.message });
   }
 });
 
-app.post("/api/upload-evidence", upload.single("evidence"), (req, res) => {
+app.post("/api/upload-evidence", upload.single("evidence"), async (req, res) => {
   if (!req.file) return res.status(400).json({ error: "No image uploaded." });
-  res.json({ ok: true, path: `attachments/${req.file.filename}` });
+  if (!pool) return res.json({ ok: true, path: `attachments/${req.file.filename}` });
+  try {
+    const name = stampName(req.file.originalname);
+    await pool.query("INSERT INTO attachments (name, mime, data) VALUES ($1, $2, $3)", [name, req.file.mimetype, req.file.buffer]);
+    res.json({ ok: true, path: `attachments/${name}` });
+  } catch (e) {
+    res.status(500).json({ error: "Could not save image.", detail: e.message });
+  }
 });
 
 app.get("/api/export/json", (_, res) => {
-  res.download(RESULTS, "zea-crm-test-results.json");
+  res.setHeader("Content-Type", "application/json; charset=utf-8");
+  res.setHeader("Content-Disposition", 'attachment; filename="zea-crm-test-results.json"');
+  res.send(JSON.stringify(getResults(), null, 2));
 });
 
 app.get("/api/export/csv", (_, res) => {
@@ -433,6 +510,15 @@ app.use((err, req, res, next) => {
 
 app.get("*", (_, res) => res.sendFile(path.join(ROOT, "public", "index.html")));
 
-app.listen(PORT, () => {
-  console.log(`ZEA CRM Test Tracker running at http://localhost:${PORT}`);
+(async () => {
+  if (DATABASE_URL) {
+    await initDatabase();
+    console.log("Using database storage.");
+  }
+  app.listen(PORT, () => {
+    console.log(`ZEA CRM Test Tracker running at http://localhost:${PORT}`);
+  });
+})().catch(e => {
+  console.error("Startup failed:", e.message);
+  process.exit(1);
 });

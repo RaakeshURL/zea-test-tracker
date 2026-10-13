@@ -1,0 +1,14 @@
+{
+  "name": "zea-crm-test-tracker",
+  "version": "1.0.0",
+  "description": "Local ZEA CRM test case execution tracker",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}

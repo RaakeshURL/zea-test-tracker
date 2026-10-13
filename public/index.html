@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ZEA CRM Test Tracker</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <h1>ZEA CRM Test Tracker</h1>
+    <p>Manual test execution workspace</p>
+  </div>
+  <div class="actions">
+    <span id="adminTools" class="actions" hidden>
+      <button id="addCaseBtn" class="primary">+ Add Test Case</button>
+      <button id="importBtn" class="primary">Import Excel</button>
+      <a href="/api/test-cases-template" class="secondary button-link">Template</a>
+      <input type="file" id="importFile" accept=".xlsx" hidden>
+    </span>
+    <button id="adminBtn" class="secondary">Admin Login</button>
+    <button id="backupBtn" class="secondary">Backup</button>
+    <button id="resetBtn" class="danger">Reset All</button>
+  </div>
+</header>
+
+<main class="container">
+  <section class="stats" id="stats"></section>
+
+  <section class="toolbar">
+    <input id="search" placeholder="Search test ID, title, module, feature..." autocomplete="off">
+    <select id="moduleFilter"><option value="">All Modules</option></select>
+    <select id="difficultyFilter"><option value="">All Levels</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option><option>Expert</option></select>
+    <select id="statusFilter">
+      <option value="">All Statuses</option>
+      <option value="PASS">PASS</option><option value="FAIL">FAIL</option>
+      <option value="NOT_TESTED">NOT TESTED</option><option value="SKIPPED">SKIPPED</option><option value="NOT_APPLICABLE">N/A</option>
+    </select>
+    <button id="clearFilters" class="secondary">Clear</button>
+  </section>
+
+  <section class="subbar">
+    <div id="resultCount"></div>
+    <div class="export-actions">
+      <a href="/api/export/json" class="secondary button-link">JSON</a>
+      <a href="/api/export/csv" class="secondary button-link">CSV</a>
+      <a href="/api/export/html" class="secondary button-link">HTML Report</a>
+    </div>
+  </section>
+
+  <section id="testList"></section>
+</main>
+
+<div id="modal" class="modal" hidden>
+  <form id="modalForm" class="modal-box"></form>
+</div>
+
+<div id="toast" class="toast"></div>
+<script src="/app.js"></script>
+</body>
+</html>

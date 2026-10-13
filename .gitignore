@@ -1,0 +1,5 @@
+node_modules/
+attachments/
+reports/
+data/execution-results.json
+*.tmp

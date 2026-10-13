@@ -1,0 +1,2691 @@
+[
+  {
+    "id": "TC-001",
+    "module": "Login",
+    "feature": "Authentication",
+    "title": "Login with valid credentials",
+    "description": "Verify that a user can log in using valid credentials.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Login area in ZEA CRM.",
+      "Perform the action: Login with valid credentials.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Beginner",
+    "priority": "High",
+    "severity": "High"
+  },
+  {
+    "id": "TC-002",
+    "module": "Login",
+    "feature": "Authentication",
+    "title": "Login with invalid password",
+    "description": "Verify that an invalid password is rejected.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Login area in ZEA CRM.",
+      "Perform the action: Login with invalid password.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Beginner",
+    "priority": "High",
+    "severity": "High"
+  },
+  {
+    "id": "TC-003",
+    "module": "Login",
+    "feature": "Authentication",
+    "title": "Login with blank credentials",
+    "description": "Verify required-field validation on the login form.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Login area in ZEA CRM.",
+      "Perform the action: Login with blank credentials.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Beginner",
+    "priority": "High",
+    "severity": "High"
+  },
+  {
+    "id": "TC-004",
+    "module": "Navigation",
+    "feature": "Navigation",
+    "title": "Navigate through main menu",
+    "description": "Verify accessible CRM modules can be opened.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Navigation area in ZEA CRM.",
+      "Perform the action: Navigate through main menu.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Beginner",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-005",
+    "module": "Navigation",
+    "feature": "Navigation",
+    "title": "Open user profile",
+    "description": "Verify the logged-in user's profile information.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Navigation area in ZEA CRM.",
+      "Perform the action: Open user profile.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Beginner",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-006",
+    "module": "Navigation",
+    "feature": "Navigation",
+    "title": "Logout",
+    "description": "Verify the user can securely log out.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Navigation area in ZEA CRM.",
+      "Perform the action: Logout.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Beginner",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-007",
+    "module": "Dashboard",
+    "feature": "Dashboard",
+    "title": "Open dashboard",
+    "description": "Verify the dashboard loads without errors.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Dashboard area in ZEA CRM.",
+      "Perform the action: Open dashboard.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Beginner",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-008",
+    "module": "Dashboard",
+    "feature": "Dashboard",
+    "title": "Verify dashboard widgets",
+    "description": "Verify dashboard cards/widgets display data.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Dashboard area in ZEA CRM.",
+      "Perform the action: Verify dashboard widgets.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Beginner",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-009",
+    "module": "Search",
+    "feature": "Search",
+    "title": "Search existing record",
+    "description": "Verify an existing CRM record can be found.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Search area in ZEA CRM.",
+      "Perform the action: Search existing record.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Beginner",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-010",
+    "module": "Search",
+    "feature": "Search",
+    "title": "Search non-existing record",
+    "description": "Verify the no-results state is handled correctly.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Search area in ZEA CRM.",
+      "Perform the action: Search non-existing record.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Beginner",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-011",
+    "module": "Leads",
+    "feature": "Lead Management",
+    "title": "Create lead with valid data",
+    "description": "Create a lead using valid mandatory and optional data.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Leads area in ZEA CRM.",
+      "Perform the action: Create lead with valid data.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "High"
+  },
+  {
+    "id": "TC-012",
+    "module": "Leads",
+    "feature": "Lead Management",
+    "title": "Create lead with mandatory fields empty",
+    "description": "Verify mandatory-field validation when creating a lead.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Leads area in ZEA CRM.",
+      "Perform the action: Create lead with mandatory fields empty.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-013",
+    "module": "Leads",
+    "feature": "Lead Management",
+    "title": "Create lead with invalid email",
+    "description": "Verify invalid email format is rejected.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Leads area in ZEA CRM.",
+      "Perform the action: Create lead with invalid email.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "High"
+  },
+  {
+    "id": "TC-014",
+    "module": "Leads",
+    "feature": "Lead Management",
+    "title": "Create lead with invalid phone number",
+    "description": "Verify invalid phone input is rejected.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Leads area in ZEA CRM.",
+      "Perform the action: Create lead with invalid phone number.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-015",
+    "module": "Leads",
+    "feature": "Lead Management",
+    "title": "Open existing lead",
+    "description": "Verify an existing lead's details can be viewed.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Leads area in ZEA CRM.",
+      "Perform the action: Open existing lead.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-016",
+    "module": "Leads",
+    "feature": "Lead Management",
+    "title": "Edit lead information",
+    "description": "Verify lead information can be updated.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Leads area in ZEA CRM.",
+      "Perform the action: Edit lead information.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-017",
+    "module": "Leads",
+    "feature": "Lead Management",
+    "title": "Delete lead",
+    "description": "Verify a lead can be deleted or moved to the configured deleted state.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Leads area in ZEA CRM.",
+      "Perform the action: Delete lead.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "High"
+  },
+  {
+    "id": "TC-018",
+    "module": "Leads",
+    "feature": "Lead Management",
+    "title": "Search lead by name",
+    "description": "Verify leads can be searched by name.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Leads area in ZEA CRM.",
+      "Perform the action: Search lead by name.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-019",
+    "module": "Leads",
+    "feature": "Lead Management",
+    "title": "Search lead by email",
+    "description": "Verify leads can be searched by email.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Leads area in ZEA CRM.",
+      "Perform the action: Search lead by email.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-020",
+    "module": "Leads",
+    "feature": "Lead Management",
+    "title": "Filter leads by status",
+    "description": "Verify lead filtering by status.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Leads area in ZEA CRM.",
+      "Perform the action: Filter leads by status.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-021",
+    "module": "Leads",
+    "feature": "Lead Management",
+    "title": "Sort leads",
+    "description": "Verify lead records can be sorted correctly.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Leads area in ZEA CRM.",
+      "Perform the action: Sort leads.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-022",
+    "module": "Leads",
+    "feature": "Lead Management",
+    "title": "Change lead status",
+    "description": "Verify a lead status can be changed.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Leads area in ZEA CRM.",
+      "Perform the action: Change lead status.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-023",
+    "module": "Leads",
+    "feature": "Lead Management",
+    "title": "Assign lead to another user",
+    "description": "Verify a lead can be assigned to another permitted user.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Leads area in ZEA CRM.",
+      "Perform the action: Assign lead to another user.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-024",
+    "module": "Leads",
+    "feature": "Lead Management",
+    "title": "Add notes to lead",
+    "description": "Verify notes can be added to a lead.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Leads area in ZEA CRM.",
+      "Perform the action: Add notes to lead.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-025",
+    "module": "Leads",
+    "feature": "Lead Management",
+    "title": "Verify lead activity/history",
+    "description": "Verify lead activity/history records are displayed.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Leads area in ZEA CRM.",
+      "Perform the action: Verify lead activity/history.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-026",
+    "module": "Contacts",
+    "feature": "Contact Management",
+    "title": "Create contact",
+    "description": "Create a contact with valid data.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Contacts area in ZEA CRM.",
+      "Perform the action: Create contact.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-027",
+    "module": "Contacts",
+    "feature": "Contact Management",
+    "title": "Create contact without mandatory fields",
+    "description": "Verify mandatory-field validation.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Contacts area in ZEA CRM.",
+      "Perform the action: Create contact without mandatory fields.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-028",
+    "module": "Contacts",
+    "feature": "Contact Management",
+    "title": "Edit contact",
+    "description": "Verify contact details can be updated.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Contacts area in ZEA CRM.",
+      "Perform the action: Edit contact.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-029",
+    "module": "Contacts",
+    "feature": "Contact Management",
+    "title": "Delete contact",
+    "description": "Verify contact deletion behavior.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Contacts area in ZEA CRM.",
+      "Perform the action: Delete contact.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-030",
+    "module": "Contacts",
+    "feature": "Contact Management",
+    "title": "Search contact",
+    "description": "Verify contacts can be searched.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Contacts area in ZEA CRM.",
+      "Perform the action: Search contact.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-031",
+    "module": "Contacts",
+    "feature": "Contact Management",
+    "title": "Filter contacts",
+    "description": "Verify contact filtering.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Contacts area in ZEA CRM.",
+      "Perform the action: Filter contacts.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-032",
+    "module": "Contacts",
+    "feature": "Contact Management",
+    "title": "Add phone/email information",
+    "description": "Verify contact communication information is saved.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Contacts area in ZEA CRM.",
+      "Perform the action: Add phone/email information.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-033",
+    "module": "Contacts",
+    "feature": "Contact Management",
+    "title": "Add notes to contact",
+    "description": "Verify contact notes are saved.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Contacts area in ZEA CRM.",
+      "Perform the action: Add notes to contact.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-034",
+    "module": "Contacts",
+    "feature": "Contact Management",
+    "title": "View contact activity",
+    "description": "Verify contact activity is displayed.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Contacts area in ZEA CRM.",
+      "Perform the action: View contact activity.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-035",
+    "module": "Contacts",
+    "feature": "Contact Management",
+    "title": "Verify contact relationship with lead/customer",
+    "description": "Verify relationships between contacts and related records.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Contacts area in ZEA CRM.",
+      "Perform the action: Verify contact relationship with lead/customer.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-036",
+    "module": "Accounts",
+    "feature": "Account Management",
+    "title": "Create account/company",
+    "description": "Create an account/company.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Accounts area in ZEA CRM.",
+      "Perform the action: Create account/company.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-037",
+    "module": "Accounts",
+    "feature": "Account Management",
+    "title": "Edit account",
+    "description": "Verify account information can be updated.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Accounts area in ZEA CRM.",
+      "Perform the action: Edit account.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-038",
+    "module": "Accounts",
+    "feature": "Account Management",
+    "title": "Delete account",
+    "description": "Verify account deletion behavior.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Accounts area in ZEA CRM.",
+      "Perform the action: Delete account.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-039",
+    "module": "Accounts",
+    "feature": "Account Management",
+    "title": "Search account",
+    "description": "Verify accounts can be searched.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Accounts area in ZEA CRM.",
+      "Perform the action: Search account.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-040",
+    "module": "Accounts",
+    "feature": "Account Management",
+    "title": "Add contact to account",
+    "description": "Verify a contact can be associated with an account.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Accounts area in ZEA CRM.",
+      "Perform the action: Add contact to account.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-041",
+    "module": "Accounts",
+    "feature": "Account Management",
+    "title": "View account-related contacts",
+    "description": "Verify associated contacts are displayed.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Accounts area in ZEA CRM.",
+      "Perform the action: View account-related contacts.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-042",
+    "module": "Accounts",
+    "feature": "Account Management",
+    "title": "Add notes/activity",
+    "description": "Verify account notes/activity are saved.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Accounts area in ZEA CRM.",
+      "Perform the action: Add notes/activity.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-043",
+    "module": "Accounts",
+    "feature": "Account Management",
+    "title": "Verify account details after refresh",
+    "description": "Verify saved account data persists after refresh.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Accounts area in ZEA CRM.",
+      "Perform the action: Verify account details after refresh.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-044",
+    "module": "Opportunities",
+    "feature": "Opportunity Management",
+    "title": "Create opportunity",
+    "description": "Create an opportunity/deal.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Opportunities area in ZEA CRM.",
+      "Perform the action: Create opportunity.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "High"
+  },
+  {
+    "id": "TC-045",
+    "module": "Opportunities",
+    "feature": "Opportunity Management",
+    "title": "Enter deal amount",
+    "description": "Verify deal amount is accepted and displayed correctly.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Opportunities area in ZEA CRM.",
+      "Perform the action: Enter deal amount.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-046",
+    "module": "Opportunities",
+    "feature": "Opportunity Management",
+    "title": "Assign opportunity",
+    "description": "Verify opportunity assignment.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Opportunities area in ZEA CRM.",
+      "Perform the action: Assign opportunity.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-047",
+    "module": "Opportunities",
+    "feature": "Opportunity Management",
+    "title": "Change opportunity stage",
+    "description": "Verify opportunity stage can be changed.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Opportunities area in ZEA CRM.",
+      "Perform the action: Change opportunity stage.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-048",
+    "module": "Opportunities",
+    "feature": "Opportunity Management",
+    "title": "Move opportunity through pipeline",
+    "description": "Verify movement between pipeline stages.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Opportunities area in ZEA CRM.",
+      "Perform the action: Move opportunity through pipeline.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-049",
+    "module": "Opportunities",
+    "feature": "Opportunity Management",
+    "title": "Mark opportunity as Won",
+    "description": "Verify a deal can be marked Won.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Opportunities area in ZEA CRM.",
+      "Perform the action: Mark opportunity as Won.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "High"
+  },
+  {
+    "id": "TC-050",
+    "module": "Opportunities",
+    "feature": "Opportunity Management",
+    "title": "Mark opportunity as Lost",
+    "description": "Verify a deal can be marked Lost.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Opportunities area in ZEA CRM.",
+      "Perform the action: Mark opportunity as Lost.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "High"
+  },
+  {
+    "id": "TC-051",
+    "module": "Opportunities",
+    "feature": "Opportunity Management",
+    "title": "Edit deal amount",
+    "description": "Verify deal amount can be edited.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Opportunities area in ZEA CRM.",
+      "Perform the action: Edit deal amount.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-052",
+    "module": "Opportunities",
+    "feature": "Opportunity Management",
+    "title": "Add opportunity activity",
+    "description": "Verify opportunity activities can be recorded.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Opportunities area in ZEA CRM.",
+      "Perform the action: Add opportunity activity.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-053",
+    "module": "Opportunities",
+    "feature": "Opportunity Management",
+    "title": "Search opportunity",
+    "description": "Verify opportunities can be searched.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Opportunities area in ZEA CRM.",
+      "Perform the action: Search opportunity.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-054",
+    "module": "Opportunities",
+    "feature": "Opportunity Management",
+    "title": "Filter opportunities by stage",
+    "description": "Verify filtering by opportunity stage.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Opportunities area in ZEA CRM.",
+      "Perform the action: Filter opportunities by stage.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-055",
+    "module": "Opportunities",
+    "feature": "Opportunity Management",
+    "title": "Verify pipeline totals",
+    "description": "Verify pipeline totals match underlying records.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Opportunities area in ZEA CRM.",
+      "Perform the action: Verify pipeline totals.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-056",
+    "module": "Activities",
+    "feature": "Task & Activity Management",
+    "title": "Create task",
+    "description": "Verify a task can be created.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Activities area in ZEA CRM.",
+      "Perform the action: Create task.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-057",
+    "module": "Activities",
+    "feature": "Task & Activity Management",
+    "title": "Assign task",
+    "description": "Verify a task can be assigned.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Activities area in ZEA CRM.",
+      "Perform the action: Assign task.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-058",
+    "module": "Activities",
+    "feature": "Task & Activity Management",
+    "title": "Set due date",
+    "description": "Verify a task due date is saved.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Activities area in ZEA CRM.",
+      "Perform the action: Set due date.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-059",
+    "module": "Activities",
+    "feature": "Task & Activity Management",
+    "title": "Complete task",
+    "description": "Verify completing a task changes its status.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Activities area in ZEA CRM.",
+      "Perform the action: Complete task.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-060",
+    "module": "Activities",
+    "feature": "Task & Activity Management",
+    "title": "Create overdue task",
+    "description": "Verify overdue tasks are identified.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Activities area in ZEA CRM.",
+      "Perform the action: Create overdue task.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-061",
+    "module": "Activities",
+    "feature": "Task & Activity Management",
+    "title": "Edit task",
+    "description": "Verify task details can be edited.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Activities area in ZEA CRM.",
+      "Perform the action: Edit task.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-062",
+    "module": "Activities",
+    "feature": "Task & Activity Management",
+    "title": "Delete task",
+    "description": "Verify task deletion behavior.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Activities area in ZEA CRM.",
+      "Perform the action: Delete task.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-063",
+    "module": "Activities",
+    "feature": "Task & Activity Management",
+    "title": "Create activity against lead",
+    "description": "Verify activity can be linked to a lead.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Activities area in ZEA CRM.",
+      "Perform the action: Create activity against lead.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-064",
+    "module": "Activities",
+    "feature": "Task & Activity Management",
+    "title": "Create activity against contact",
+    "description": "Verify activity can be linked to a contact.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Activities area in ZEA CRM.",
+      "Perform the action: Create activity against contact.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-065",
+    "module": "Communication",
+    "feature": "Communication",
+    "title": "Send email",
+    "description": "Verify an email can be sent from the CRM if enabled.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Communication area in ZEA CRM.",
+      "Perform the action: Send email.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-066",
+    "module": "Communication",
+    "feature": "Communication",
+    "title": "Send email to invalid address",
+    "description": "Verify invalid recipient handling.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Communication area in ZEA CRM.",
+      "Perform the action: Send email to invalid address.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-067",
+    "module": "Communication",
+    "feature": "Communication",
+    "title": "Verify email history",
+    "description": "Verify sent communication appears in history.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Communication area in ZEA CRM.",
+      "Perform the action: Verify email history.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-068",
+    "module": "Communication",
+    "feature": "Communication",
+    "title": "Create email template",
+    "description": "Verify an email template can be created.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Communication area in ZEA CRM.",
+      "Perform the action: Create email template.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-069",
+    "module": "Communication",
+    "feature": "Communication",
+    "title": "Use email template",
+    "description": "Verify a template populates the communication composer.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Communication area in ZEA CRM.",
+      "Perform the action: Use email template.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-070",
+    "module": "Communication",
+    "feature": "Communication",
+    "title": "Send communication to lead",
+    "description": "Verify communication is associated with a lead.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Communication area in ZEA CRM.",
+      "Perform the action: Send communication to lead.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-071",
+    "module": "Communication",
+    "feature": "Communication",
+    "title": "Verify communication history",
+    "description": "Verify previous communications are visible.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Communication area in ZEA CRM.",
+      "Perform the action: Verify communication history.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-072",
+    "module": "Automation",
+    "feature": "Workflow Automation",
+    "title": "Create automation/workflow",
+    "description": "Verify a workflow can be created.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Automation area in ZEA CRM.",
+      "Perform the action: Create automation/workflow.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-073",
+    "module": "Automation",
+    "feature": "Workflow Automation",
+    "title": "Configure trigger",
+    "description": "Verify workflow trigger conditions can be configured.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Automation area in ZEA CRM.",
+      "Perform the action: Configure trigger.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-074",
+    "module": "Automation",
+    "feature": "Workflow Automation",
+    "title": "Configure action",
+    "description": "Verify workflow actions can be configured.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Automation area in ZEA CRM.",
+      "Perform the action: Configure action.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-075",
+    "module": "Automation",
+    "feature": "Workflow Automation",
+    "title": "Create record satisfying trigger",
+    "description": "Verify a matching record triggers the workflow.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Automation area in ZEA CRM.",
+      "Perform the action: Create record satisfying trigger.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "High"
+  },
+  {
+    "id": "TC-076",
+    "module": "Automation",
+    "feature": "Workflow Automation",
+    "title": "Create record not satisfying trigger",
+    "description": "Verify a non-matching record does not trigger the workflow.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Automation area in ZEA CRM.",
+      "Perform the action: Create record not satisfying trigger.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "High"
+  },
+  {
+    "id": "TC-077",
+    "module": "Automation",
+    "feature": "Workflow Automation",
+    "title": "Verify automated task creation",
+    "description": "Verify an automation creates the expected task.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Automation area in ZEA CRM.",
+      "Perform the action: Verify automated task creation.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-078",
+    "module": "Automation",
+    "feature": "Workflow Automation",
+    "title": "Verify automated assignment",
+    "description": "Verify an automation assigns the expected user.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Automation area in ZEA CRM.",
+      "Perform the action: Verify automated assignment.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-079",
+    "module": "Automation",
+    "feature": "Workflow Automation",
+    "title": "Verify automated notification",
+    "description": "Verify the configured notification is generated.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Automation area in ZEA CRM.",
+      "Perform the action: Verify automated notification.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-080",
+    "module": "Automation",
+    "feature": "Workflow Automation",
+    "title": "Disable workflow",
+    "description": "Verify disabled workflows no longer execute.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Automation area in ZEA CRM.",
+      "Perform the action: Disable workflow.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-081",
+    "module": "Reports",
+    "feature": "Reporting",
+    "title": "Open reports",
+    "description": "Verify reports load successfully.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Reports area in ZEA CRM.",
+      "Perform the action: Open reports.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-082",
+    "module": "Reports",
+    "feature": "Reporting",
+    "title": "Generate lead report",
+    "description": "Verify a lead report can be generated.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Reports area in ZEA CRM.",
+      "Perform the action: Generate lead report.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-083",
+    "module": "Reports",
+    "feature": "Reporting",
+    "title": "Filter report by date",
+    "description": "Verify date filtering.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Reports area in ZEA CRM.",
+      "Perform the action: Filter report by date.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-084",
+    "module": "Reports",
+    "feature": "Reporting",
+    "title": "Filter report by user",
+    "description": "Verify user filtering.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Reports area in ZEA CRM.",
+      "Perform the action: Filter report by user.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-085",
+    "module": "Reports",
+    "feature": "Reporting",
+    "title": "Filter report by status",
+    "description": "Verify status filtering.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Reports area in ZEA CRM.",
+      "Perform the action: Filter report by status.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-086",
+    "module": "Reports",
+    "feature": "Reporting",
+    "title": "Export report",
+    "description": "Verify report export.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Reports area in ZEA CRM.",
+      "Perform the action: Export report.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-087",
+    "module": "Reports",
+    "feature": "Reporting",
+    "title": "Compare report data with CRM records",
+    "description": "Verify report values match source records.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Reports area in ZEA CRM.",
+      "Perform the action: Compare report data with CRM records.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "High"
+  },
+  {
+    "id": "TC-088",
+    "module": "Reports",
+    "feature": "Reporting",
+    "title": "Verify dashboard metrics",
+    "description": "Verify dashboard metrics match underlying CRM data.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Reports area in ZEA CRM.",
+      "Perform the action: Verify dashboard metrics.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "High"
+  },
+  {
+    "id": "TC-089",
+    "module": "Negative Testing",
+    "feature": "Validation & Edge Cases",
+    "title": "Invalid email format",
+    "description": "Verify malformed email input is rejected.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Negative Testing area in ZEA CRM.",
+      "Perform the action: Invalid email format.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-090",
+    "module": "Negative Testing",
+    "feature": "Validation & Edge Cases",
+    "title": "Extremely long name",
+    "description": "Verify application handles unusually long names safely.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Negative Testing area in ZEA CRM.",
+      "Perform the action: Extremely long name.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-091",
+    "module": "Negative Testing",
+    "feature": "Validation & Edge Cases",
+    "title": "Special characters",
+    "description": "Verify supported special characters are handled correctly.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Negative Testing area in ZEA CRM.",
+      "Perform the action: Special characters.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-092",
+    "module": "Negative Testing",
+    "feature": "Validation & Edge Cases",
+    "title": "Duplicate email",
+    "description": "Verify duplicate email behavior is correct.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Negative Testing area in ZEA CRM.",
+      "Perform the action: Duplicate email.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-093",
+    "module": "Negative Testing",
+    "feature": "Validation & Edge Cases",
+    "title": "Duplicate phone number",
+    "description": "Verify duplicate phone behavior is correct.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Negative Testing area in ZEA CRM.",
+      "Perform the action: Duplicate phone number.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-094",
+    "module": "Negative Testing",
+    "feature": "Validation & Edge Cases",
+    "title": "Duplicate lead",
+    "description": "Verify duplicate lead detection or documented duplicate behavior.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Negative Testing area in ZEA CRM.",
+      "Perform the action: Duplicate lead.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-095",
+    "module": "Negative Testing",
+    "feature": "Validation & Edge Cases",
+    "title": "Negative deal amount",
+    "description": "Verify invalid negative monetary values are rejected.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Negative Testing area in ZEA CRM.",
+      "Perform the action: Negative deal amount.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-096",
+    "module": "Negative Testing",
+    "feature": "Validation & Edge Cases",
+    "title": "Extremely large deal amount",
+    "description": "Verify large monetary values are handled correctly.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Negative Testing area in ZEA CRM.",
+      "Perform the action: Extremely large deal amount.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-097",
+    "module": "Negative Testing",
+    "feature": "Validation & Edge Cases",
+    "title": "Past date",
+    "description": "Verify date rules for past dates.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Negative Testing area in ZEA CRM.",
+      "Perform the action: Past date.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-098",
+    "module": "Negative Testing",
+    "feature": "Validation & Edge Cases",
+    "title": "Invalid date",
+    "description": "Verify invalid date input is rejected.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Negative Testing area in ZEA CRM.",
+      "Perform the action: Invalid date.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-099",
+    "module": "Negative Testing",
+    "feature": "Validation & Edge Cases",
+    "title": "Non-existent record ID",
+    "description": "Verify invalid record references are handled safely.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Negative Testing area in ZEA CRM.",
+      "Perform the action: Non-existent record ID.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Advanced",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-100",
+    "module": "Negative Testing",
+    "feature": "Validation & Edge Cases",
+    "title": "Refresh page after data update",
+    "description": "Verify saved changes persist after refresh.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Create or edit a record.",
+      "Save the change.",
+      "Refresh the browser page.",
+      "Reopen the record.",
+      "Verify the saved values."
+    ],
+    "expectedResult": "Previously saved data should remain intact after refresh.",
+    "difficulty": "Advanced",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-101",
+    "module": "Permissions",
+    "feature": "Role-Based Access Control",
+    "title": "Admin creates lead",
+    "description": "Verify an administrator can create a lead.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Permissions area in ZEA CRM.",
+      "Perform the action: Admin creates lead.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Expert",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-102",
+    "module": "Permissions",
+    "feature": "Role-Based Access Control",
+    "title": "Normal user creates lead",
+    "description": "Verify a normal user has the configured create permission.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Permissions area in ZEA CRM.",
+      "Perform the action: Normal user creates lead.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Expert",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-103",
+    "module": "Permissions",
+    "feature": "Role-Based Access Control",
+    "title": "Verify edit permissions",
+    "description": "Verify edit access follows role permissions.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Permissions area in ZEA CRM.",
+      "Perform the action: Verify edit permissions.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Expert",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-104",
+    "module": "Permissions",
+    "feature": "Role-Based Access Control",
+    "title": "Verify delete permissions",
+    "description": "Verify delete access follows role permissions.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Permissions area in ZEA CRM.",
+      "Perform the action: Verify delete permissions.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Expert",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-105",
+    "module": "Permissions",
+    "feature": "Role-Based Access Control",
+    "title": "Verify report permissions",
+    "description": "Verify report access follows role permissions.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Permissions area in ZEA CRM.",
+      "Perform the action: Verify report permissions.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Expert",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-106",
+    "module": "Permissions",
+    "feature": "Role-Based Access Control",
+    "title": "Verify export permissions",
+    "description": "Verify export access follows role permissions.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Permissions area in ZEA CRM.",
+      "Perform the action: Verify export permissions.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Expert",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-107",
+    "module": "Permissions",
+    "feature": "Role-Based Access Control",
+    "title": "Verify user management permissions",
+    "description": "Verify only permitted roles can manage users.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Permissions area in ZEA CRM.",
+      "Perform the action: Verify user management permissions.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Expert",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-108",
+    "module": "Permissions",
+    "feature": "Role-Based Access Control",
+    "title": "Verify automation permissions",
+    "description": "Verify workflow permissions follow role configuration.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Open the Permissions area in ZEA CRM.",
+      "Perform the action: Verify automation permissions.",
+      "Enter valid or intentionally invalid data as required by the test.",
+      "Submit/save the change.",
+      "Observe the resulting behavior and verify the expected result."
+    ],
+    "expectedResult": "The application should behave according to the configured business rules without data loss or unexpected errors.",
+    "difficulty": "Expert",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-109",
+    "module": "End-to-End",
+    "feature": "End-to-End",
+    "title": "Lead to Customer E2E",
+    "description": "Verify the complete lead-to-customer sales journey.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Create a new lead.",
+      "Assign the lead to a user.",
+      "Add notes/activity.",
+      "Change the lead status.",
+      "Convert the lead if the CRM supports conversion.",
+      "Create or verify the related contact/account.",
+      "Create an opportunity.",
+      "Move the opportunity through its pipeline stages.",
+      "Mark the opportunity Won.",
+      "Verify related account/customer and activity history."
+    ],
+    "expectedResult": "The complete configured lead-to-customer journey should work and relationships/history should remain consistent.",
+    "difficulty": "Expert",
+    "priority": "High",
+    "severity": "High"
+  },
+  {
+    "id": "TC-110",
+    "module": "End-to-End",
+    "feature": "End-to-End",
+    "title": "Duplicate Lead E2E",
+    "description": "Verify duplicate handling across a complete lead flow.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Create a lead with a unique email/phone.",
+      "Attempt to create the same lead again.",
+      "Observe duplicate detection or duplicate handling.",
+      "Verify the final record state and any warning."
+    ],
+    "expectedResult": "The CRM should follow its configured duplicate policy and should not unexpectedly corrupt or duplicate data.",
+    "difficulty": "Expert",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-111",
+    "module": "End-to-End",
+    "feature": "End-to-End",
+    "title": "Assignment E2E",
+    "description": "Verify record assignment and reassignment across users.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Create a lead.",
+      "Assign it to User A.",
+      "Verify User A can access it according to permissions.",
+      "Reassign it to User B.",
+      "Verify User B can access it and the assignment history/state is correct."
+    ],
+    "expectedResult": "Assignment and reassignment should be reflected consistently for authorized users.",
+    "difficulty": "Expert",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-112",
+    "module": "End-to-End",
+    "feature": "End-to-End",
+    "title": "Automation E2E",
+    "description": "Verify an automation from trigger through resulting action.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Configure an automation trigger and action.",
+      "Create a record that satisfies the trigger.",
+      "Verify the trigger fires.",
+      "Verify the configured action executes.",
+      "Check activity/history and notifications."
+    ],
+    "expectedResult": "The workflow should execute once according to its configured conditions and actions.",
+    "difficulty": "Expert",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "TC-113",
+    "module": "End-to-End",
+    "feature": "End-to-End",
+    "title": "Reporting Accuracy E2E",
+    "description": "Verify CRM records, dashboard metrics, and reports remain consistent.",
+    "preconditions": [
+      "User has access to the relevant ZEA CRM module/feature.",
+      "Required test data is available."
+    ],
+    "steps": [
+      "Create a controlled set of CRM records.",
+      "Record expected counts and totals.",
+      "Open the dashboard.",
+      "Generate the relevant report.",
+      "Compare dashboard and report values with the underlying records."
+    ],
+    "expectedResult": "Dashboard and report values should match the underlying CRM records within the configured filters/date range.",
+    "difficulty": "Expert",
+    "priority": "High",
+    "severity": "High"
+  },
+  {
+    "id": "SMP-001",
+    "module": "Login",
+    "feature": "Authentication",
+    "title": "Login with valid credentials",
+    "description": "Verify a user can log in with a valid username and password.",
+    "preconditions": [
+      "User account exists",
+      "CRM URL is reachable"
+    ],
+    "steps": [
+      "Open the login page",
+      "Enter valid username",
+      "Enter valid password",
+      "Click Login"
+    ],
+    "expectedResult": "User lands on the dashboard.",
+    "difficulty": "Beginner",
+    "priority": "High",
+    "severity": "Critical"
+  },
+  {
+    "id": "SMP-002",
+    "module": "Login",
+    "feature": "Authentication",
+    "title": "Login with invalid password",
+    "description": "Verify an invalid password is rejected.",
+    "preconditions": [
+      "User account exists"
+    ],
+    "steps": [
+      "Open the login page",
+      "Enter valid username",
+      "Enter a wrong password",
+      "Click Login"
+    ],
+    "expectedResult": "An error message is shown and the user is not logged in.",
+    "difficulty": "Beginner",
+    "priority": "High",
+    "severity": "High"
+  },
+  {
+    "id": "SMP-003",
+    "module": "Leads",
+    "feature": "Lead Creation",
+    "title": "Create a lead with mandatory fields",
+    "description": "Verify a lead can be created with only required fields.",
+    "preconditions": [
+      "User is logged in",
+      "User has permission to create leads"
+    ],
+    "steps": [
+      "Open Leads",
+      "Click New Lead",
+      "Fill all mandatory fields",
+      "Click Save"
+    ],
+    "expectedResult": "Lead is saved and appears in the leads list.",
+    "difficulty": "Beginner",
+    "priority": "High",
+    "severity": "High"
+  },
+  {
+    "id": "SMP-004",
+    "module": "Leads",
+    "feature": "Lead Creation",
+    "title": "Create a lead with missing mandatory field",
+    "description": "Verify validation when a required field is empty.",
+    "preconditions": [
+      "User is logged in"
+    ],
+    "steps": [
+      "Open Leads",
+      "Click New Lead",
+      "Leave Last Name empty",
+      "Click Save"
+    ],
+    "expectedResult": "Validation error is shown and the lead is not saved.",
+    "difficulty": "Beginner",
+    "priority": "Medium",
+    "severity": "Medium"
+  },
+  {
+    "id": "SMP-005",
+    "module": "Leads",
+    "feature": "Lead Conversion",
+    "title": "Convert a lead to contact and account",
+    "description": "Verify lead conversion creates the related records.",
+    "preconditions": [
+      "An open lead exists"
+    ],
+    "steps": [
+      "Open the lead",
+      "Click Convert",
+      "Confirm account and contact details",
+      "Submit"
+    ],
+    "expectedResult": "Contact and account are created and the lead is marked converted.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "High"
+  },
+  {
+    "id": "SMP-006",
+    "module": "Contacts",
+    "feature": "Search",
+    "title": "Search contact by email",
+    "description": "Verify the global search finds a contact by email address.",
+    "preconditions": [
+      "At least one contact with a known email exists"
+    ],
+    "steps": [
+      "Open the search box",
+      "Enter the contact email",
+      "Press Enter"
+    ],
+    "expectedResult": "The matching contact is listed in the results.",
+    "difficulty": "Beginner",
+    "priority": "Medium",
+    "severity": "Low"
+  },
+  {
+    "id": "SMP-007",
+    "module": "Opportunities",
+    "feature": "Pipeline",
+    "title": "Move opportunity to next stage",
+    "description": "Verify an opportunity can be advanced through pipeline stages.",
+    "preconditions": [
+      "An open opportunity exists"
+    ],
+    "steps": [
+      "Open the opportunity",
+      "Change stage to the next stage",
+      "Save"
+    ],
+    "expectedResult": "Stage is updated and the change appears in the history.",
+    "difficulty": "Intermediate",
+    "priority": "High",
+    "severity": "Medium"
+  },
+  {
+    "id": "SMP-008",
+    "module": "Reports",
+    "feature": "Dashboard",
+    "title": "Dashboard totals match report",
+    "description": "Verify dashboard counts match the underlying report.",
+    "preconditions": [
+      "Test data exists for the current month"
+    ],
+    "steps": [
+      "Note the dashboard total",
+      "Open the matching report",
+      "Apply the same date range",
+      "Compare totals"
+    ],
+    "expectedResult": "Dashboard and report totals are identical.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "High"
+  },
+  {
+    "id": "SMP-009",
+    "module": "Users & Roles",
+    "feature": "Permissions",
+    "title": "Restricted user cannot delete records",
+    "description": "Verify a read-only role cannot delete records.",
+    "preconditions": [
+      "A read-only user exists"
+    ],
+    "steps": [
+      "Log in as the read-only user",
+      "Open any record",
+      "Look for the Delete option"
+    ],
+    "expectedResult": "Delete is hidden or blocked with a permission message.",
+    "difficulty": "Advanced",
+    "priority": "High",
+    "severity": "Critical"
+  },
+  {
+    "id": "SMP-010",
+    "module": "Import/Export",
+    "feature": "CSV Export",
+    "title": "Export contacts to CSV",
+    "description": "Verify contact export produces a valid CSV file.",
+    "preconditions": [
+      "Multiple contacts exist"
+    ],
+    "steps": [
+      "Open Contacts",
+      "Click Export",
+      "Choose CSV",
+      "Open the downloaded file"
+    ],
+    "expectedResult": "CSV downloads with correct headers and all contact rows.",
+    "difficulty": "Intermediate",
+    "priority": "Medium",
+    "severity": "Low"
+  }
+]
